@@ -8,14 +8,12 @@
 /* FUNDO GLOBAL COM IMAGEM */
 body {
   color: #fff;
-
   background:
     linear-gradient(
       rgba(0, 0, 0, 0.80),
       rgba(0, 0, 0, 0.95)
     ),
     url("https://696a5adc093e5846cd3b659a.imgix.net/Best%20Netflix%20Background%20Dc.jpg");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,12 +54,14 @@ body {
   gap: 20px;
 }
 
+/* CARD */
 .card {
   background: rgba(20, 20, 20, 0.95);
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(229,9,20,0.25);
   transition: transform .3s, box-shadow .3s;
+  text-align: center;
 }
 
 .card:hover {
@@ -79,6 +79,13 @@ body {
   color: #e50914;
 }
 
+.card small {
+  display: block;
+  margin-bottom: 10px;
+  color: #22c55e;
+}
+
+/* BOTÃO */
 .card button {
   padding: 10px 20px;
   border: none;
@@ -86,10 +93,12 @@ body {
   background: #e50914;
   color: #fff;
   cursor: pointer;
+  transition: background .3s, transform .2s;
 }
 
 .card button:hover {
   background: #ff1f2d;
+  transform: scale(1.05);
 }
 
 /* INFO */
@@ -116,4 +125,23 @@ body {
   border-radius: 50%;
   text-decoration: none;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform .3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* MOBILE — centralizar APENAS o último card */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .cards .card:last-child {
+    justify-self: center;
+    width: 100%;
+    max-width: 260px;
+  }
 }
