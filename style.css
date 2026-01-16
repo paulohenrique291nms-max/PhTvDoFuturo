@@ -56,6 +56,13 @@ body {
   margin: 0 auto;
 }
 
+/* TERCEIRO CARD CENTRALIZADO */
+.cards .card:nth-child(3) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 260px;
+}
+
 /* CARD */
 .card {
   background: rgba(20, 20, 20, 0.95);
