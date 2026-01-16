@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BrMasterPlay IPTV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <h1>🎬 BrMasterPlay IPTV</h1>
+  <p>Filmes, séries, esportes e canais ao vivo em um só lugar</p>
+</header>
+
+<section class="plans">
+  <h2>Acesso Único (1 Tela)</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p class="price">R$ 20</p>
+      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 1 Tela – R$20')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Trimestral</h3>
+      <p class="price">R$ 50</p>
+      <small>Economia de R$ 5,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 1 Tela – R$50')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Semestral + 1 mês</h3>
+      <p class="price">R$ 100</p>
+      <small>Economia de R$ 40,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 1 Tela – R$100')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Anual + 2 meses</h3>
+      <p class="price">R$ 200</p>
+      <small>Economia de R$ 80,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 1 Tela – R$200')">
+        Assinar
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="plans">
+  <h2>Pacote Duplo (2 Telas)</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p class="price">R$ 30</p>
+      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 2 Telas – R$30')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Trimestral</h3>
+      <p class="price">R$ 80</p>
+      <small>Economia de R$ 10,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 2 Telas – R$80')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Semestral + 1 mês</h3>
+      <p class="price">R$ 160</p>
+      <small>Economia de R$ 50,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 2 Telas – R$160')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Anual + 2 meses</h3>
+      <p class="price">R$ 300</p>
+      <small>Economia de R$ 120,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 2 Telas – R$300')">
+        Assinar
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="info">
+  <h2>📡 Principais Canais ao Vivo</h2>
+  <p>
+    Globo • SBT • Record • Band • RedeTV •
+    SporTV • ESPN • Premiere • TNT Sports •
+    Combate • Discovery Channel • History • National Geographic
+  </p>
+
+  <h2>🎬 Plataformas de Streaming</h2>
+  <p>
+    Netflix • Prime Video • Disney+ • HBO Max •
+    Globoplay • Star+ • Apple TV+ • Paramount+
+  </p>
+
+  <h2>📱 Compatível com</h2>
+  <p>
+    Smart TV • TV Box • Android • iPhone •
+    Computador • Fire Stick • Chromecast
+  </p>
+</section>
+
+<a class="whatsapp-float" href="#"
+   onclick="whats('Olá! Quero mais informações sobre os planos IPTV')">
+  💬
+</a>
+
+<script>
+function whats(texto) {
+  const numero = "5521965204419"; // 55 + DDD + número
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
