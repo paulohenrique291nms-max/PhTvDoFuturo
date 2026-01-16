@@ -8,14 +8,12 @@
 /* FUNDO GLOBAL COM IMAGEM */
 body {
   color: #fff;
-
   background:
     linear-gradient(
       rgba(0, 0, 0, 0.80),
       rgba(0, 0, 0, 0.95)
     ),
     url("https://696a5adc093e5846cd3b659a.imgix.net/en-iyi-10-netflix-filmi-2023-850x478.jpg");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,17 +54,19 @@ body {
   gap: 20px;
 }
 
+/* CARD */
 .card {
   background: rgba(20, 20, 20, 0.95);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(229,9,20,0.25);
+  box-shadow: 0 0 15px rgba(123, 17, 148, 0.25);
   transition: transform .3s, box-shadow .3s;
+  text-align: center;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(229,9,20,0.6);
+  box-shadow: 0 0 25px rgba(123, 17, 148, 0.6);
 }
 
 .card h3 {
@@ -79,6 +79,7 @@ body {
   color: #7b1194;
 }
 
+/* BOTÃO */
 .card button {
   padding: 10px 20px;
   border: none;
@@ -86,10 +87,12 @@ body {
   background: #7b1194;
   color: #fff;
   cursor: pointer;
+  transition: background .3s, transform .2s;
 }
 
 .card button:hover {
   background: #7b1194;
+  transform: scale(1.05);
 }
 
 /* INFO */
@@ -115,5 +118,10 @@ body {
   padding: 15px 18px;
   border-radius: 50%;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(123, 17, 148, 0.6);
+  transition: transform .3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
 }
