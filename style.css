@@ -28,7 +28,7 @@ body {
 
 .hero h1 {
   font-size: 3em;
-  color: #7b1194;
+  color: #ee001c;
   text-shadow: 0 4px 20px rgba(0,0,0,0.9);
 }
 
@@ -59,14 +59,14 @@ body {
   background: rgba(20, 20, 20, 0.95);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(123, 17, 148, 0.25);
+  box-shadow: 0 0 15px rgba(238,0,28,0.25);
   transition: transform .3s, box-shadow .3s;
   text-align: center;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(123, 17, 148, 0.6);
+  box-shadow: 0 0 25px rgba(238,0,28,0.6);
 }
 
 .card h3 {
@@ -76,7 +76,7 @@ body {
 .price {
   font-size: 2em;
   margin: 15px 0;
-  color: #7b1194;
+  color: #ee001c;
 }
 
 /* BOTÃO */
@@ -84,14 +84,14 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 30px;
-  background: #7b1194;
+  background: #ee001c;
   color: #fff;
   cursor: pointer;
   transition: background .3s, transform .2s;
 }
 
 .card button:hover {
-  background: #7b1194;
+  background: #ee001c;
   transform: scale(1.05);
 }
 
@@ -112,13 +112,13 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #7b1194;
+  background: #ee001c;
   color: #fff;
   font-size: 28px;
   padding: 15px 18px;
   border-radius: 50%;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(123, 17, 148, 0.6);
+  box-shadow: 0 0 15px rgba(238,0,28,0.6);
   transition: transform .3s;
 }
 
