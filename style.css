@@ -1,119 +1,135 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BrMasterPlay IPTV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <h1>🎬 BrMasterPlay IPTV</h1>
+  <p>Filmes, séries, esportes e canais ao vivo em um só lugar</p>
+</header>
+
+<section class="plans">
+  <h2>Acesso Único (1 Tela)</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p class="price">R$ 20</p>
+      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 1 Tela – R$20')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Trimestral</h3>
+      <p class="price">R$ 50</p>
+      <small>Economia de R$ 5,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 1 Tela – R$50')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Semestral + 1 mês</h3>
+      <p class="price">R$ 100</p>
+      <small>Economia de R$ 40,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 1 Tela – R$100')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Anual + 2 meses</h3>
+      <p class="price">R$ 200</p>
+      <small>Economia de R$ 80,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 1 Tela – R$200')">
+        Assinar
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="plans">
+  <h2>Pacote Duplo (2 Telas)</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p class="price">R$ 30</p>
+      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 2 Telas – R$30')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Trimestral</h3>
+      <p class="price">R$ 80</p>
+      <small>Economia de R$ 10,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 2 Telas – R$80')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Semestral + 1 mês</h3>
+      <p class="price">R$ 160</p>
+      <small>Economia de R$ 50,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 2 Telas – R$160')">
+        Assinar
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Anual + 2 meses</h3>
+      <p class="price">R$ 300</p>
+      <small>Economia de R$ 120,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 2 Telas – R$300')">
+        Assinar
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="info">
+  <h2>📡 Principais Canais ao Vivo</h2>
+  <p>
+    Globo • SBT • Record • Band • RedeTV •
+    SporTV • ESPN • Premiere • TNT Sports •
+    Combate • Discovery Channel • History • National Geographic
+  </p>
+
+  <h2>🎬 Plataformas de Streaming</h2>
+  <p>
+    Netflix • Prime Video • Disney+ • HBO Max •
+    Globoplay • Star+ • Apple TV+ • Paramount+
+  </p>
+
+  <h2>📱 Compatível com</h2>
+  <p>
+    Smart TV • TV Box • Android • iPhone •
+    Computador • Fire Stick • Chromecast
+  </p>
+</section>
+
+<a class="whatsapp-float" href="#"
+   onclick="whats('Olá! Quero mais informações sobre os planos IPTV')">
+  💬
+</a>
+
+<script>
+function whats(texto) {
+  const numero = "5521965204419"; // 55 + DDD + número
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+  window.open(url, "_blank");
 }
+</script>
 
-/* FUNDO GLOBAL COM IMAGEM */
-body {
-  color: #fff;
-
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.80),
-      rgba(0, 0, 0, 0.95)
-    ),
-    url("https://696a5adc093e5846cd3b659a.imgix.net/Best%20Netflix%20Background%20Dc.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.hero h1 {
-  font-size: 3em;
-  color: #e50914;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.9);
-}
-
-.hero p {
-  margin-top: 10px;
-  color: #ccc;
-}
-
-/* PLANOS */
-.plans {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.plans h2 {
-  margin-bottom: 25px;
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: rgba(20, 20, 20, 0.95);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(229,9,20,0.25);
-  transition: transform .3s, box-shadow .3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(229,9,20,0.6);
-}
-
-.card h3 {
-  font-size: 1.4em;
-}
-
-.price {
-  font-size: 2em;
-  margin: 15px 0;
-  color: #e50914;
-}
-
-.card button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
-  background: #e50914;
-  color: #fff;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background: #ff1f2d;
-}
-
-/* INFO */
-.info {
-  padding: 40px 20px;
-  text-align: center;
-  background: rgba(0,0,0,0.85);
-}
-
-.info p {
-  color: #ccc;
-  margin-bottom: 15px;
-}
-
-/* WHATSAPP */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: #fff;
-  font-size: 28px;
-  padding: 15px 18px;
-  border-radius: 50%;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
+</body>
+</html>
