@@ -18,82 +18,49 @@
   <div class="cards">
 
     <div class="card">
-      <h3>Plano Mensal</h3>
-      <p class="price">R$ 20</p>
-      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 1 Tela – R$20')">
+      <h3>Mensal</h3>
+      <p class="price">R$ 35</p>
+      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 1 Tela – R$35')">
         Assinar
       </button>
     </div>
 
     <div class="card">
-      <h3>Trimestral</h3>
-      <p class="price">R$ 50</p>
+      <h3>Bimestral</h3>
+      <p class="price">R$ 60</p>
       <small>Economia de R$ 5,00</small>
-      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 1 Tela – R$50')">
-        Assinar
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>Semestral + 1 mês</h3>
-      <p class="price">R$ 100</p>
-      <small>Economia de R$ 40,00</small>
-      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 1 Tela – R$100')">
-        Assinar
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>Anual + 2 meses</h3>
-      <p class="price">R$ 200</p>
-      <small>Economia de R$ 80,00</small>
-      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 1 Tela – R$200')">
-        Assinar
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<section class="plans">
-  <h2>Pacote Duplo (2 Telas)</h2>
-  <div class="cards">
-
-    <div class="card">
-      <h3>Plano Mensal</h3>
-      <p class="price">R$ 30</p>
-      <button onclick="whats('Olá! Quero contratar o Plano Mensal – 2 Telas – R$30')">
+      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 1 Tela – R$60')">
         Assinar
       </button>
     </div>
 
     <div class="card">
       <h3>Trimestral</h3>
-      <p class="price">R$ 80</p>
-      <small>Economia de R$ 10,00</small>
-      <button onclick="whats('Olá! Quero contratar o Plano Trimestral – 2 Telas – R$80')">
+      <p class="price">R$ 85</p>
+      <small>Economia de R$ 40,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 1 Tela – R$85')">
         Assinar
       </button>
     </div>
 
     <div class="card">
-      <h3>Semestral + 1 mês</h3>
-      <p class="price">R$ 160</p>
-      <small>Economia de R$ 50,00</small>
-      <button onclick="whats('Olá! Quero contratar o Plano Semestral + 1 mês – 2 Telas – R$160')">
+      <h3>Semestral</h3>
+      <p class="price">R$ 170</p>
+      <small>Economia de R$ 80,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 1 Tela – R$170')">
         Assinar
       </button>
     </div>
 
     <div class="card">
-      <h3>Anual + 2 meses</h3>
+      <h3>Anual</h3>
       <p class="price">R$ 300</p>
-      <small>Economia de R$ 120,00</small>
-      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 2 Telas – R$300')">
+      <small>Economia de R$ 80,00</small>
+      <button onclick="whats('Olá! Quero contratar o Plano Anual + 2 meses – 1 Tela – R$300')">
         Assinar
       </button>
     </div>
-
+    
   </div>
 </section>
 
@@ -125,7 +92,7 @@
 
 <script>
 function whats(texto) {
-  const numero = "5521965204419"; // 55 + DDD + número
+  const numero = "556299288729"; // 55 + DDD + número
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
 }
