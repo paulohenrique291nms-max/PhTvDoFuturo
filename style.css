@@ -10,8 +10,8 @@ body {
   color: #fff;
   background:
     linear-gradient(
-      rgba(0, 0, 0, 0.60),
-      rgba(0, 0, 0, 0.75)
+      rgba(0, 0, 0, 0.40),
+      rgba(0, 0, 0, 0.65)
     ),
     url("https://696a5adc093e5846cd3b659a.imgix.net/3968181.jpg");
   background-size: cover;
