@@ -1,0 +1,523 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* 🧱 BASE */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #0d1117;
+  overscroll-behavior: none;
+}
+
+/* 🎨 PALETA GITHUB */
+:root {
+  --bg-main: #0d1117;
+  --bg-card: #161b22;
+  --bg-soft: #0d1117;
+  --border: #30363d;
+
+  --primary: #2f81f7;
+  --primary-hover: #58a6ff;
+
+  --text-main: #c9d1d9;
+  --text-muted: #8b949e;
+}
+
+/* FUNDO FIXO REAL (SEM BUG MOBILE) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(13,17,23,.9), rgba(13,17,23,.98)),
+    url("https://696a5adc093e5846cd3b659a.imgix.net/Best%20Netflix%20Background%20Dc.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* BODY */
+body {
+  color: var(--text-main);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  color: var(--primary);
+  text-shadow: 0 4px 20px rgba(0,0,0,.9);
+}
+
+.hero p {
+  color: var(--text-muted);
+}
+
+/* SEÇÕES */
+.plans {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.plans h2 {
+  margin-bottom: 25px;
+}
+
+/* GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* 🔵 ANIMAÇÃO */
+@keyframes activeGlow {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(47,129,247,.25);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow:
+      0 0 25px rgba(47,129,247,.55),
+      0 0 45px rgba(47,129,247,.35);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(47,129,247,.25);
+  }
+}
+
+/* CARD */
+.card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  animation: activeGlow 12s ease-in-out infinite;
+  transition: none;
+}
+
+/* DELAYS */
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 3s; }
+.card:nth-child(3) { animation-delay: 6s; }
+.card:nth-child(4) { animation-delay: 9s; }
+
+.card h3 {
+  font-size: 1.4em;
+}
+
+/* PREÇO */
+.price {
+  font-size: 2em;
+  margin: 15px 0;
+  color: var(--primary);
+}
+
+.card small {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-muted);
+}
+
+/* BOTÃO */
+.card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: var(--primary-hover);
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 28px;
+  padding: 15px 18px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+
+/* RODAPÉ */
+.footer {
+  background: rgba(13,17,23,.95);
+  padding: 50px 20px;
+}
+
+/* TITULOS */
+.footer h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--text-main);
+}
+
+/* FAQ */
+.faq-item {
+  max-width: 700px;
+  margin: 10px auto;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px;
+  color: var(--primary);
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px;
+  color: var(--text-muted);
+  background: var(--bg-soft);
+}
+
+/* QUALIDADE */
+.quality-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.quality-card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  text-align: center;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+/* DISPOSITIVOS */
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+  gap: 15px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.device-grid span {
+  background: var(--bg-card);
+  padding: 15px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+/* BOTÕES WHATSAPP / TELEGRAM (PLANOS) */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.btn i {
+  font-size: 18px;
+}
+
+/* Cores por app */
+.btn-whatsapp {
+  background: #25D366;
+}
+
+.btn-whatsapp:hover {
+  filter: brightness(1.05);
+}
+
+.btn-telegram {
+  background: #0088cc;
+}
+
+.btn-telegram:hover {
+  filter: brightness(1.05);
+}
+
+/* TELEGRAM FLOAT */
+.telegram-float {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #0088cc;
+  color: #fff;
+  font-size: 28px;
+  padding: 15px 18px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+
+/* =========================
+   VÍDEO YOUTUBE CENTRALIZADO
+========================= */
+
+.video-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.video-section h2 {
+  margin-bottom: 25px;
+  color: var(--text-main);
+}
+
+
+/* Caixa do vídeo */
+.video-container {
+  width: 90%;
+  max-width: 850px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 25px rgba(0,0,0,.5);
+}
+
+
+/* Player Youtube */
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+
+/* Ajuste para celular */
+@media(max-width:600px){
+
+  .video-container {
+    width: 95%;
+    border-radius: 12px;
+  }
+
+}
+
+/* =========================
+   REDES SOCIAIS DESTAQUE
+========================= */
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 230px;
+  height: 65px;
+
+  border-radius: 40px;
+
+  text-decoration: none;
+  color: white;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  letter-spacing: .5px;
+
+  box-shadow:
+    0 0 15px rgba(255,255,255,.15),
+    0 8px 25px rgba(0,0,0,.5);
+
+  transition: .3s ease;
+}
+
+
+.social i {
+  font-size: 30px;
+}
+
+
+/* INSTAGRAM */
+
+.instagram {
+  background: linear-gradient(
+    45deg,
+    #f9ce34,
+    #ee2a7b,
+    #6228d7
+  );
+
+  animation: socialPulse 3s infinite;
+}
+
+
+/* TELEGRAM */
+
+.telegram {
+  background: linear-gradient(
+    135deg,
+    #0088cc,
+    #00bfff
+  );
+
+  animation: socialPulse 3s infinite 1.5s;
+}
+
+
+/* Efeito ao passar mouse */
+
+.social:hover {
+  transform: scale(1.08) translateY(-5px);
+
+  box-shadow:
+    0 0 30px rgba(47,129,247,.8),
+    0 15px 35px rgba(0,0,0,.6);
+}
+
+
+/* Brilho pulsando */
+
+@keyframes socialPulse {
+
+  0% {
+    box-shadow: 
+    0 0 15px rgba(255,255,255,.2);
+  }
+
+  50% {
+    box-shadow:
+    0 0 35px rgba(47,129,247,.8);
+  }
+
+  100% {
+    box-shadow:
+    0 0 15px rgba(255,255,255,.2);
+  }
+
+}
+
+
+
+/* CUPOM DE DESCONTO */
+.coupon-section { padding: 10px 20px 35px; text-align: center; }
+.coupon-box {
+  max-width: 650px; margin: 0 auto; padding: 25px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,.25);
+}
+.coupon-box h2 { margin-bottom: 8px; color: var(--primary); }
+.coupon-box p { margin-bottom: 18px; color: var(--text-muted); }
+.coupon-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.coupon-form input {
+  flex: 1; min-width: 220px; padding: 12px 16px;
+  border: 1px solid var(--border); border-radius: 30px; outline: none;
+  background: var(--bg-soft); color: var(--text-main); font-size: 16px;
+  text-align: center; text-transform: uppercase;
+}
+.coupon-form input:focus { border-color: var(--primary); }
+.coupon-btn {
+  padding: 12px 22px; border: none; border-radius: 30px;
+  background: var(--primary); color: #fff; cursor: pointer; font-weight: 700;
+}
+.coupon-btn:hover { background: var(--primary-hover); }
+.coupon-message { min-height: 24px; margin-top: 12px; font-weight: 600; }
+.coupon-message.success { color: #3fb950; }
+.coupon-message.error { color: #f85149; }
+.coupon-applied {
+  align-items: center; justify-content: center; gap: 6px; margin-top: 12px;
+  padding: 10px 14px; border-radius: 10px; background: rgba(47,129,247,.10);
+  border: 1px solid var(--border); flex-wrap: wrap;
+}
+.coupon-applied strong { color: var(--primary-hover); }
+.coupon-applied button {
+  margin-left: 6px; border: none; background: transparent;
+  color: var(--text-muted); cursor: pointer; font-size: 16px;
+}
+.coupon-applied button:hover { color: #f85149; }
+@media(max-width:600px) {
+  .coupon-box { padding: 20px 15px; }
+  .coupon-form { flex-direction: column; }
+  .coupon-form input, .coupon-btn { width: 100%; min-width: 0; }
+}
+
+/* Celular */
+
+@media(max-width:600px){
+
+  .social {
+    width: 90%;
+    height: 60px;
+    font-size: 20px;
+  }
+
+}
+
+.social:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.15);
+}
+
+.social-title {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Ação Pix ao lado do WhatsApp nos cartões de planos */
+.card .btn-pix { background: linear-gradient(135deg,#21bfae,#137eae); color: #fff; }
+.card .btn-pix:hover { background: linear-gradient(135deg,#29d5be,#228fce); }

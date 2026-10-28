@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>GOLDPLAY TV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header class="hero">
+
+  <h1>🎬 GOLDPLAY TV</h1>
+
+  <p>Filmes, séries, esportes e canais ao vivo em um só lugar</p>
+
+  <p class="social-title">
+    Siga nossas novidades e atualizações
+  </p>
+
+
+  <div class="social-buttons">
+
+    <a href="https://www.instagram.com/cortesgoldplay" 
+       target="_blank" 
+       class="social instagram">
+       <i class="fa-brands fa-instagram"></i>
+       Instagram
+    </a>
+
+
+    <a href="https://www.tiktok.com/@goldplaycortes" 
+       target="_blank" 
+       class="social instagram">
+       <i class="fa-brands fa-tiktok"></i>
+       TikTok
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="coupon-section">
+  <div class="coupon-box">
+    <h2>🎟️ Cupom de Desconto</h2>
+    <p>Digite seu código promocional antes de escolher seu plano.</p>
+    <div class="coupon-form">
+      <input type="text" id="couponInput" placeholder="Digite seu cupom"
+             maxlength="30" autocomplete="off" aria-label="Código de desconto">
+      <button type="button" class="coupon-btn" onclick="aplicarCupom()">Aplicar Cupom</button>
+    </div>
+    <div id="couponMessage" class="coupon-message" aria-live="polite"></div>
+    <div id="couponApplied" class="coupon-applied" style="display:none;">
+      <span>🎉 Cupom aplicado:</span>
+      <strong id="couponCodeDisplay"></strong>
+      <span id="couponDiscountDisplay"></span>
+      <button type="button" onclick="removerCupom()" aria-label="Remover cupom">✕</button>
+    </div>
+  </div>
+</section>
+
+<section class="plans">
+  <h2>PLANO GOLD (1 Tela)</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p class="price">R$ 25</p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-whatsapp" onclick="contratarPlano('Plano Mensal', '1 Tela', 25, true)"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Mensal', '1 Tela', 25, true)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Trimestral</h3>
+      <p class="price">R$ 65</p>
+      <small>Economia de R$ 10,00</small>
+      <div class="btn-group">
+        <button type="button" class="btn btn-whatsapp" onclick="contratarPlano('Plano Trimestral', '1 Tela', 65)"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Trimestral', '1 Tela', 65)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Semestral</h3>
+      <p class="price">R$ 125</p>
+      <small>+ 1 mês</small><br>
+      <small>Economia de R$ 50,00</small>
+      <div class="btn-group">
+        <button type="button" class="btn btn-whatsapp" onclick="contratarPlano('Plano Semestral + 1 mês', '1 Tela', 125)"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Semestral + 1 mês', '1 Tela', 125)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Anual</h3>
+      <p class="price">R$ 250</p>
+      <small>+ 2 meses</small><br>
+      <small>Economia de R$ 100,00</small>
+      <small><strong>💳 Parcele em até 2x</strong></small>
+      <div class="btn-group">
+        <button type="button" class="btn btn-whatsapp" onclick="contratarPlano('Plano Anual + 2 meses', '1 Tela', 250)"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Anual + 2 meses', '1 Tela', 250)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="plans">
+  <h2>PLANO DIAMOND (2 Telas)</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p class="price">R$ 30</p>
+
+      <div class="btn-group">
+        <button 
+          type="button" 
+          class="btn btn-whatsapp" 
+          onclick="contratarPlano('Plano Mensal', '2 Telas', 30, true)">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Mensal', '2 Telas', 30, true)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <h3>Trimestral</h3>
+      <p class="price">R$ 80</p>
+      <small>Economia de R$ 10,00</small>
+
+      <div class="btn-group">
+        <button 
+          type="button" 
+          class="btn btn-whatsapp" 
+          onclick="contratarPlano('Plano Trimestral', '2 Telas', 80)">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Trimestral', '2 Telas', 80)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <h3>Semestral</h3>
+      <p class="price">R$ 160</p>
+      <small>+ 1 mês</small><br>
+      <small>Economia de R$ 50,00</small>
+
+      <div class="btn-group">
+        <button 
+          type="button" 
+          class="btn btn-whatsapp" 
+          onclick="contratarPlano('Plano Semestral + 1 mês', '2 Telas', 160)">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Semestral + 1 mês', '2 Telas', 160)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <h3>Anual</h3>
+      <p class="price">R$ 320</p>
+      <small>+ 2 meses</small><br>
+      <small>Economia de R$ 100,00</small>
+        <small><strong>💳 Parcele em até 2x</strong></small>
+
+      <div class="btn-group">
+        <button 
+          type="button" 
+          class="btn btn-whatsapp" 
+          onclick="contratarPlano('Plano Anual + 2 meses', '2 Telas', 320)">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button type="button" class="btn btn-pix" onclick="abrirPagamentoPix('Plano Anual + 2 meses', '2 Telas', 320)"><i class="fa-solid fa-qrcode"></i> Pagar com Pix</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+
+<!-- VÍDEO EXPLICATIVO -->
+<section class="video-section">
+
+  <h2>Veja como funciona</h2>
+
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/ogwKqe5_GnQ"
+      title="Vídeo explicativo GOLDPLAY TV"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</section>
+
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Dúvidas Frequentes</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">O que é IPTV?</button>
+      <div class="faq-answer">
+        IPTV é a transmissão de canais, filmes e séries pela internet,
+        sem uso de antenas ou cabos tradicionais.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Funciona em qualquer aparelho?</button>
+      <div class="faq-answer">
+        Funciona em Smart TVs, Roku TV, Android TV, TV Box, MI STICK, celular, computador, tablet e outros.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Posso testar antes de assinar?</button>
+      <div class="faq-answer">
+        Sim, oferecemos teste gratuito mediante disponibilidade.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quantas telas posso usar?</button>
+      <div class="faq-answer">
+        Depende do plano contratado: 1 ou 2 telas simultâneas. Para mais telas, entre em contato com o vendedor.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quais são os canais ao vivo disponíveis?</button>
+      <div class="faq-answer">
+        Globo, SBT, BAND, RECORD, PREMIERE, ESPN, ESPORTES, SPORTV, TELECINE, HBO, DISCOVERY, PPV Esporte, INFANTIL, NOTÍCIAS, DESENHOS 24H, SÉRIES 24H, entre outros.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quais são as plataformas de filmes e séries disponíveis?</button>
+      <div class="faq-answer">
+        Netflix, Apple TV+, Discovery+, Prime Vídeo, Disney+, Globoplay, Max, Paramount+, Star+, AMC Plus, Crunchyroll, Funimation Now, entre outros.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Qual aplicativo vou usar?</button>
+      <div class="faq-answer">
+        Vai depender do sistema de sua televisão ou aparelho conectado a ela, oferecemos uma lista de alguns aplicativos para conexão.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question">O aplicativo é gratuito ou preciso pagar?</button>
+      <div class="faq-answer">
+        É possível utilizar aplicativos <strong>gratuitos</strong>, porém recomendamos os
+        <strong>aplicativos pagos</strong>, pois oferecem maior segurança e estabilidade.<br>
+        O valor varia entre <strong>R$ 30 e R$ 50 por ano</strong>, com pagamento
+        <strong>único anual</strong>.
+      </div>
+    </div>
+
+  </section>
+
+  <section class="quality">
+    <h2>Qualidade de Imagem</h2>
+    <div class="quality-cards">
+      <div class="quality-card">SD / HD<br><small>Conexões simples</small></div>
+      <div class="quality-card">Full HD<br><small>Padrão da indústria</small></div>
+      <div class="quality-card">4K<br><small>Ultra definição</small></div>
+    </div>
+  </section>
+
+</footer>
+
+<a class="whatsapp-float" href="#" onclick="whats('Olá! Quero mais informações sobre os planos IPTV')" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+/*
+ * CUPONS: cada código pode ter um valor final diferente para cada plano mensal.
+ * Ex.: EMBURANA40 deixa R$ 25 por R$ 15 e R$ 30 por R$ 20.
+ */
+const cupons = {
+  "EMBURANA": {
+    plano25: 15,
+    plano30: 20
+  },
+  "GORDIN": {
+    plano25: 15,
+    plano30: 20
+  },
+  "MALAQUIAS": {
+    plano25: 15,
+    plano30: 20
+  },
+  "GOLDPLAY": {
+    plano25: 15,
+    plano30: 20
+  }
+};
+
+let cupomAtual = null;
+
+/*
+ * CONTROLE DE CUPOM SEM BANCO DE DADOS
+ * ------------------------------------
+ * Cada navegador recebe um identificador local (localStorage).
+ * Quando um cupom é confirmado ao clicar em "WhatsApp" em um plano
+ * mensal com desconto, ele é marcado como utilizado neste navegador.
+ *
+ * IMPORTANTE:
+ * Este método não é 100% seguro. O usuário pode apagar os dados do
+ * navegador, usar outro navegador/dispositivo ou acessar em modo anônimo.
+ */
+
+const STORAGE_DEVICE_ID = "goldplay_device_id";
+const STORAGE_USED_COUPONS = "goldplay_used_coupons";
+
+function obterIdDispositivo() {
+  let deviceId = localStorage.getItem(STORAGE_DEVICE_ID);
+
+  if (!deviceId) {
+    if (window.crypto && crypto.randomUUID) {
+      deviceId = crypto.randomUUID();
+    } else {
+      deviceId = "gp-" + Date.now() + "-" + Math.random().toString(36).slice(2);
+    }
+
+    localStorage.setItem(STORAGE_DEVICE_ID, deviceId);
+  }
+
+  return deviceId;
+}
+
+function obterCuponsUsados() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_USED_COUPONS) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function cupomJaUsado(codigo) {
+  return obterCuponsUsados().includes(codigo);
+}
+
+function marcarCupomComoUsado(codigo) {
+  const usados = obterCuponsUsados();
+
+  if (!usados.includes(codigo)) {
+    usados.push(codigo);
+    localStorage.setItem(STORAGE_USED_COUPONS, JSON.stringify(usados));
+  }
+}
+
+function aplicarCupom() {
+  const input = document.getElementById("couponInput");
+  const message = document.getElementById("couponMessage");
+  const codigo = input.value.trim().toUpperCase();
+
+  message.className = "coupon-message";
+
+  if (!codigo) {
+    message.textContent = "Digite um código de desconto.";
+    message.classList.add("error");
+    return;
+  }
+
+  if (!Object.prototype.hasOwnProperty.call(cupons, codigo)) {
+    cupomAtual = null;
+    document.getElementById("couponApplied").style.display = "none";
+    message.textContent = "Cupom inválido ou inexistente.";
+    message.classList.add("error");
+    return;
+  }
+
+  if (cupomJaUsado(codigo)) {
+    cupomAtual = null;
+    document.getElementById("couponApplied").style.display = "none";
+    message.textContent = "⚠️ Você já utilizou este cupom.";
+    message.classList.add("error");
+    return;
+  }
+
+  cupomAtual = codigo;
+  message.textContent = "Cupom válido! O desconto será aplicado no plano mensal.";
+  message.classList.add("success");
+
+  document.getElementById("couponCodeDisplay").textContent = codigo;
+  document.getElementById("couponDiscountDisplay").textContent =
+    " — desconto disponível nos planos mensais";
+  document.getElementById("couponApplied").style.display = "flex";
+  input.value = codigo;
+}
+
+function removerCupom() {
+  cupomAtual = null;
+  document.getElementById("couponInput").value = "";
+  document.getElementById("couponMessage").textContent = "";
+  document.getElementById("couponMessage").className = "coupon-message";
+  document.getElementById("couponApplied").style.display = "none";
+}
+
+function obterValorComCupom(valorOriginal, permiteCupom = false) {
+  if (!cupomAtual || !permiteCupom) {
+    return { valorFinal: Number(valorOriginal), descontoPercentual: 0 };
+  }
+
+  const cupom = cupons[cupomAtual];
+  let valorPromocional = null;
+
+  if (Number(valorOriginal) === 25) {
+    valorPromocional = cupom.plano25;
+  } else if (Number(valorOriginal) === 30) {
+    valorPromocional = cupom.plano30;
+  }
+
+  if (valorPromocional === null || valorPromocional === undefined) {
+    return { valorFinal: Number(valorOriginal), descontoPercentual: 0 };
+  }
+
+  const valorFinal = Number(valorPromocional.toFixed(2));
+  const descontoPercentual = Number(
+    ((1 - valorFinal / Number(valorOriginal)) * 100).toFixed(2)
+  );
+
+  return { valorFinal, descontoPercentual };
+}
+
+function formatarMoeda(valor) {
+  return valor.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+}
+
+function contratarPlano(nomePlano, telas, valorOriginal, permiteCupom = false) {
+  if (cupomAtual && cupomJaUsado(cupomAtual)) {
+    const message = document.getElementById("couponMessage");
+    message.textContent = "⚠️ Você já utilizou este cupom.";
+    message.className = "coupon-message error";
+    cupomAtual = null;
+    document.getElementById("couponApplied").style.display = "none";
+    return;
+  }
+
+  const resultado = obterValorComCupom(valorOriginal, permiteCupom);
+  const valorFinal = resultado.valorFinal;
+  const descontoPercentual = resultado.descontoPercentual;
+  const numero = "5521965204419";
+
+  let texto = `Olá! Quero contratar o ${nomePlano} – ${telas}.`;
+
+  if (cupomAtual && descontoPercentual > 0) {
+    texto += `\n\nCupom: ${cupomAtual}`;
+    texto += `\nDesconto: ${descontoPercentual}%`;
+    texto += `\nValor original: ${formatarMoeda(valorOriginal)}`;
+    texto += `\nValor com desconto: ${formatarMoeda(valorFinal)}`;
+  } else {
+    texto += `\n\nValor: ${formatarMoeda(valorOriginal)}`;
+  }
+
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, "_blank");
+
+  // Marca o cupom como utilizado somente quando o usuário realmente
+  // tenta contratar um plano mensal com desconto.
+  if (cupomAtual && descontoPercentual > 0 && permiteCupom) {
+    marcarCupomComoUsado(cupomAtual);
+
+    const message = document.getElementById("couponMessage");
+    message.textContent = "✅ Cupom registrado como utilizado neste navegador.";
+    message.className = "coupon-message success";
+  }
+}
+
+// Envia somente planos conhecidos para a página de pagamento.
+// Observação: cupons no JavaScript não representam validação por servidor.
+function abrirPagamentoPix(nomePlano, telas, valorOriginal, permiteCupom = false) {
+  const resultado = obterValorComCupom(valorOriginal, permiteCupom);
+  const parametros = new URLSearchParams({
+    plano: nomePlano,
+    telas: telas,
+    valor: String(resultado.valorFinal)
+  });
+  window.location.href = `checkout.html?${parametros.toString()}`;
+}
+
+function whats(texto) {
+  const numero = "5521965204419";
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, "_blank");
+}
+
+// Cria o identificador local do navegador ao carregar a página.
+obterIdDispositivo();
+
+document.getElementById("couponInput")?.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") aplicarCupom();
+});
+
+document.querySelectorAll(".faq-question").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const answer = btn.nextElementSibling;
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+  });
+});
+</script>
+
+</body>
+</html>
