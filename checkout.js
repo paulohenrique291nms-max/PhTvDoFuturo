@@ -5,9 +5,9 @@
    =========================================================== */
 const CONFIG = {
   chavePix: 'e3965777-b906-4c6a-8d9c-3f9f9113def7',
-  nomeRecebedor: 'Paulo Henrique Cachappuz Alvarenga',
+  nomeRecebedor: 'Paulo Henrique C Alvarenga',
   tipoChave: 'Chave aleatória',
-  instituicao: 'Banco Itaú',
+  instituicao: 'Itaú Unibanco S.A',
   whatsapp: '5562999288729'
 };
 
