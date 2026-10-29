@@ -349,40 +349,43 @@ body {
 .card .btn-pix:hover { background: linear-gradient(135deg,#29d5be,#228fce); }
 
 
-/* =============================================================
-   TEMA VALIDABR — azul e branco | substituível sem afetar JS
-   ============================================================= */
-:root{
- --bg-main:#f4f8ff; --bg-card:#ffffff; --bg-soft:#edf4ff;
- --border:#d6e4f5; --primary:#1769e8; --primary-hover:#0c52c1;
- --text-main:#172c49; --text-muted:#61748d;
+
+/* PH TV DO FUTURO — identidade oficial */
+:root {
+  --bg-main:#F4F8FF;
+  --bg-card:#FFFFFF;
+  --bg-soft:#F4F8FF;
+  --border:#D6E4F5;
+  --primary:#1769E8;
+  --primary-hover:#172C49;
+  --text-main:#172C49;
+  --text-muted:#172C49;
 }
-html,body{background-color:var(--bg-main);color:var(--text-main)}
-body::before{
- background:radial-gradient(circle at 12% 8%,#d7eaff 0,transparent 35%),
- radial-gradient(circle at 90% 32%,#e2f0ff 0,transparent 38%),
- linear-gradient(#f8fbff,#edf5ff);
+html,body { background:#F4F8FF; color:#172C49; }
+body::before { background:linear-gradient(145deg,#FFFFFF,#F4F8FF); }
+.hero { padding:74px 20px 45px; }
+.hero h1 { color:#1769E8; text-shadow:none; letter-spacing:-.04em; }
+.hero p { color:#172C49; }
+.plans { max-width:1240px; margin:auto; }
+.plans h2,.footer h2 { color:#172C49; }
+.card,.faq-item,.quality-card,.device-grid span {
+  background:#FFFFFF; border:1px solid #D6E4F5;
+  box-shadow:0 8px 24px rgba(23,44,73,.07);
 }
-.hero{padding:74px 20px 49px}
-.hero h1{color:var(--primary);text-shadow:none;letter-spacing:-.04em}
-.hero p{color:var(--text-muted)}
-.plans{max-width:1240px;margin:0 auto}
-.plans h2,.footer h2{color:#16365d}
-.card,.faq-item,.quality-card,.device-grid span{
- background:#fff;border:1px solid #d6e4f5;
- box-shadow:0 10px 34px #1a4b8a0b;
+.card { animation:none; transition:transform .2s ease,box-shadow .2s ease; }
+.card:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(23,44,73,.12); }
+.price,.quality-card,.faq-question { color:#1769E8; }
+.card button,.card .btn-pix,.card .btn-whatsapp,.whatsapp-float {
+  background:#1769E8 !important; color:#FFFFFF;
 }
-.card{animation:none;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.card:hover{transform:translateY(-4px);border-color:#93c0ff;box-shadow:0 16px 35px #165ab21a}
-.price,.quality-card,.faq-question{color:var(--primary)}
-.card button:not(.btn-whatsapp):not(.btn-telegram){background:var(--primary)}
-.card button:not(.btn-whatsapp):not(.btn-telegram):hover{background:var(--primary-hover)}
-.card .btn-pix{background:linear-gradient(130deg,#1769e8,#3b94fa)!important;color:#fff}
-.card .btn-pix:hover{background:linear-gradient(130deg,#0d53bf,#2479de)!important}
-.card .btn-whatsapp{background:#25ba65;color:#fff}
-.card .btn-whatsapp:hover{background:#18a653}
-.footer{background:#e9f2ffed;border-top:1px solid #d6e4f5}
-.faq-answer{color:var(--text-muted);background:var(--bg-soft)}
-.whatsapp-float{background:#1fb960;color:white}
-.video-container{box-shadow:0 14px 40px #1b4f8b25}
-@media(max-width:600px){.hero{padding:55px 18px 35px}.hero h1{font-size:2.45rem}.plans{padding:30px 16px}}
+.card button:hover,.card .btn-pix:hover,.card .btn-whatsapp:hover,.whatsapp-float:hover {
+  background:#172C49 !important; color:#FFFFFF;
+}
+.footer { background:#FFFFFF; border-top:1px solid #D6E4F5; }
+.faq-answer { color:#172C49; background:#F4F8FF; }
+.video-container { border:1px solid #D6E4F5; box-shadow:0 10px 30px rgba(23,44,73,.09); }
+@media(max-width:600px) {
+  .hero { padding:55px 18px 35px; }
+  .hero h1 { font-size:2.45rem; }
+  .plans { padding:30px 16px; }
+}
