@@ -1,25 +1,20 @@
-# GOLDPLAY TV — Checkout Pix Premium
+# PH TV DO FUTURO — Site com checkout Pix
 
-Site estático compatível com GitHub Pages. Inclui página inicial com 8 planos, botão **Pagar com Pix** para cada plano e nova página de checkout responsiva.
+Site estático para GitHub Pages, com planos exclusivos de **1 tela**. Sem cupons de desconto e sem links de Instagram ou TikTok.
 
-## Publicação
-1. Extraia os arquivos da pasta `goldplay-pix` para a **raiz** do seu repositório GitHub (de modo que `index.html` fique na raiz).
-2. Em Settings > Pages, escolha Deploy from a branch, branch `main`, pasta `/ (root)`.
-3. Abra o endereço fornecido pelo GitHub Pages e teste os planos, o botão de copiar a chave e o WhatsApp.
+## Planos
+- Mensal: R$ 25
+- Trimestral: R$ 65
+- Semestral + 1 mês: R$ 125
+- Anual + 2 meses: R$ 250
 
-## Dados Pix
-Edite o objeto `CONFIG` no começo do arquivo `checkout.js` para alterar chave, recebedor, banco ou WhatsApp.
+## Publicação no GitHub Pages
+Envie `index.html`, `style.css`, `checkout.html`, `checkout.css` e `checkout.js` para a raiz do repositório. Ative GitHub Pages em **Settings > Pages > Deploy from a branch > main > / (root)**.
 
-## Pagamentos e limites
-- A página disponibiliza **chave Pix aleatória copiável** (não é um código Pix Copia e Cola EMV, nem gera QR Code bancário).
-- O valor do plano é mostrado para referência: o comprador deve digitá-lo no banco e conferir o titular.
-- Pagamentos **não são confirmados automaticamente**. O comprovante enviado pelo WhatsApp deve ser verificado no extrato.
-- Cupons e preços no navegador/GitHub Pages não têm validação segura no servidor: confira preços promocionais com o atendimento antes da cobrança.
-- Não inclua senhas, segredos ou tokens em arquivos públicos.
+## Personalização
+No começo de `checkout.js`, configure os dados de Pix e o número do WhatsApp. Atualize também a constante `WHATSAPP` no script do `index.html` para manter os contatos iguais. Os dados atuais foram preservados do projeto enviado.
 
-## Ordem do checkout
+## Pagamentos
+O botão copia uma **chave Pix**, não gera cobrança automática nem QR Code bancário. O comprador informa o valor no aplicativo bancário e envia o comprovante via WhatsApp. Confira o recebimento no extrato antes de liberar o serviço.
 
-Na página `checkout.html`, as ações de pagamento são apresentadas na sequência: **1. Copiar a chave Pix**, **2. Informações do recebedor**, **3. Enviar o comprovante por WhatsApp**. A confirmação do pagamento é manual.
-
-## Layout atualizado
-O resumo do pedido aparece antes de “01 FINALIZE SEU PEDIDO”. O checkout inicia diretamente em “1. COPIE SUA CHAVE PIX”, sem o antigo bloco “Pix, sem complicação” e sem valor duplicado.
+O vídeo explicativo original foi mantido. Caso mostre a marca anterior, substitua o URL do iframe no `index.html`.

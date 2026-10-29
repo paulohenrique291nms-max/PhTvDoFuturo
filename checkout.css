@@ -18,3 +18,45 @@ main>.summary-card .summary-foot{margin-top:24px;padding-top:18px}
 .columns .pay-card{width:100%}
 .pay-card>.label-line:first-of-type{margin-top:2px}
 @media(max-width:720px){main>.summary-card{margin:20px auto 26px;padding:21px}.stage-label{margin-bottom:15px}}
+
+
+/* =============================================================
+   TEMA VALIDABR — checkout claro, mantendo todos os controles
+   ============================================================= */
+:root{color-scheme:light;--bg:#f5f9ff;--line:#d9e6f5;--muted:#627894;--blue:#1769e8;--aqua:#3894f6;--white:#172c49}
+body{background:linear-gradient(155deg,#f7fbff,#eaf3ff);color:#172c49}
+.noise{background-image:radial-gradient(#6f9bd01a 1px,transparent 1px)}
+.glow-a{background:#8fc4fa2a}.glow-b{background:#7cb1f02b}
+.nav{border-bottom-color:#d5e3f4}.logo{color:#16365d}
+.logo-icon{background:linear-gradient(140deg,#48a5ff,#1769e8);box-shadow:0 4px 20px #1769e82d;color:white}
+.logo-dot{color:#1769e8}.nav-right{color:#53708e}
+.breadcrumb{color:#70839a}.breadcrumb a{color:#235cb4}.breadcrumb a:hover{color:#1769e8}
+.micro,.overline{color:#1769e8}.intro p{color:#61748d}.intro-points{color:#254669}
+.shine{background:linear-gradient(90deg,#1769e8,#54aeef,#1769e8);background-size:250%;background-clip:text;color:transparent}
+.stage-label{color:#476585}.stage-label span{background:#e5f1ff;border-color:#9fc8ff;color:#1769e8}.stage-label i{background:linear-gradient(90deg,#c5daf4,transparent)}
+.pay-card,.summary-card{border:1px solid #cfdef0;box-shadow:0 18px 52px #1b4c8617}
+.pay-card,.summary-card{background:linear-gradient(155deg,#ffffff,#f9fcff)}
+.pay-heading h2,.summary-top h2,.howto h2{color:#183c66}
+.pay-icon{background:#e7f2ff;border-color:#b7d6fc;color:#1769e8}
+.pix-tag{background:#e2f0ff;color:#1553a7}
+.amount-pill{background:linear-gradient(110deg,#1769e8,#358bf3);color:white;box-shadow:0 12px 26px #1769e82c}
+.amount-pill span{color:#eaf5ff}.amount-pill strong{color:#fff}
+.label-line{color:#264366}.tiny-check{color:#188556}.label-info{color:#728ba6}
+.pix-block,.receiver,.product-line,.proof-block,.step{background:#f4f9ff;border:1px solid #d5e5f7}
+.key-icon{background:#dfedff;color:#1769e8}.pix-block-top span,.receiver-info small,.product-line small{color:#597da5}
+.pix-block-top strong,.receiver-info strong,.product-line strong{color:#1c3759}
+.primary-button{color:#fff;background:linear-gradient(90deg,#1769e8,#3187f1);box-shadow:0 9px 24px #1769e82b}
+.copy-note,.receiver-info>span,.note,.summary-top p,.product-line span,.row-info,.order-help,.proof-instruction,.proof-note,.step p{color:#617894}
+.receiver-avatar,.product-icon{background:linear-gradient(135deg,#368cf2,#1769e8);color:#fff}
+.receiver-mark{background:#e1f8ec;color:#167b48}
+.note>span{color:#1769e8}.separator{border-color:#b7cde7}
+.row-info strong,.summary-total strong{color:#16365d}.row-info .free{color:#178b59}
+.summary-foot{border-color:#d7e5f4;color:#637f9e}
+.step-num{color:#91afd0}.step-glyph{background:#e4f0ff;border-color:#bad5f5;color:#1769e8}
+.step h3{color:#234467}
+footer{border-color:#d4e3f4;color:#6d829a}
+.proof-block{background:#f4f9ff;border-color:#d5e5f7}
+.toast{background:#dbf9e9;color:#14643f}
+.alert{background:#fff6e6;color:#925b14;border-color:#f3d394}
+.halo{border-color:#85b8ed66}.art-chip{background:#fff;border-color:#cce1f8;color:#244a74}
+@media(max-width:720px){.summary-card,.pay-card{box-shadow:0 9px 26px #1b4c8612}}

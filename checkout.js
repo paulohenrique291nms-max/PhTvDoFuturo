@@ -17,23 +17,14 @@ const PLANOS = [
   { nome:'Plano Mensal', telas:'1 Tela', valor:25 },
   { nome:'Plano Trimestral', telas:'1 Tela', valor:65 },
   { nome:'Plano Semestral + 1 mês', telas:'1 Tela', valor:125 },
-  { nome:'Plano Anual + 2 meses', telas:'1 Tela', valor:250 },
-  { nome:'Plano Mensal', telas:'2 Telas', valor:30 },
-  { nome:'Plano Trimestral', telas:'2 Telas', valor:80 },
-  { nome:'Plano Semestral + 1 mês', telas:'2 Telas', valor:160 },
-  { nome:'Plano Anual + 2 meses', telas:'2 Telas', valor:320 }
+  { nome:'Plano Anual + 2 meses', telas:'1 Tela', valor:250 }
 ];
 const moeda = valor => Number(valor).toLocaleString('pt-BR', {style:'currency',currency:'BRL'});
 const $ = id => document.getElementById(id);
 const parametros = new URLSearchParams(location.search);
-const plano = PLANOS.find(item => item.nome === parametros.get('plano') && item.telas === parametros.get('telas'));
+const plano = PLANOS.find(item => item.nome === parametros.get('plano') && item.telas === '1 Tela' && (!parametros.has('telas') || parametros.get('telas') === '1 Tela'));
 
-// Preços com cupom são informativos e devem ser conferidos com o vendedor:
-// URL e cupons em sites estáticos podem ser alterados pelo visitante.
-const valorInformado = Number(parametros.get('valor'));
-const descontoPossivel = plano && plano.nome === 'Plano Mensal' &&
-  ((plano.valor === 25 && valorInformado === 15) || (plano.valor === 30 && valorInformado === 20));
-const valorExibido = plano ? (descontoPossivel ? valorInformado : plano.valor) : null;
+const valorExibido = plano ? plano.valor : null;
 
 const chaveConfigurada = CONFIG.chavePix.trim() && CONFIG.chavePix !== 'SUA_CHAVE_PIX_AQUI';
 const recebedorConfigurado = CONFIG.nomeRecebedor.trim() && CONFIG.nomeRecebedor !== 'NOME DO RECEBEDOR';
@@ -48,12 +39,10 @@ $('copyButton').disabled = !pronto;
 $('year').textContent = new Date().getFullYear();
 if (plano) {
   $('planName').textContent = plano.nome;
-  $('screenCount').textContent = `${plano.telas} · GOLDPLAY TV`;
+  $('screenCount').textContent = `${plano.telas} · PH TV DO FUTURO`;
   $('orderValue').textContent = moeda(valorExibido);
   $('totalValue').textContent = moeda(valorExibido);
-  $('orderHelp').textContent = descontoPossivel
-    ? 'Preço promocional informado no navegador. Confirme o desconto com o atendente antes de pagar.'
-    : 'Confira este valor no aplicativo do banco antes de confirmar.';
+  $('orderHelp').textContent = 'Confira este valor no aplicativo do banco antes de confirmar.';
 } else {
   $('orderHelp').textContent = 'Nenhum plano selecionado. Volte à página inicial para escolher um plano.';
 }
