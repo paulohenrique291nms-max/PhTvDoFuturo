@@ -1,23 +1,24 @@
-# PH TV DO FUTURO — Site com checkout Pix
+# PH TV DO FUTURO — Checkout Pix Premium
 
-Site estático para GitHub Pages, com planos exclusivos de **1 tela**. Sem cupons de desconto e sem links de Instagram ou TikTok.
+Site estático compatível com GitHub Pages. Inclui página inicial com **5 planos de 1 tela**, botão **Pagar com Pix** para cada plano e página de checkout responsiva.
 
-## Planos
-- Mensal: R$ 25
-- Trimestral: R$ 65
-- Semestral + 1 mês: R$ 125
-- Anual + 2 meses: R$ 250
+## Planos atuais
+- Mensal — R$ 35,00
+- Bimestral — R$ 60,00 (economia de R$ 10,00)
+- Trimestral — R$ 85,00 (economia de R$ 20,00)
+- Semestral — R$ 170,00 (economia de R$ 40,00)
+- Anual — R$ 300,00 (economia de R$ 120,00)
 
-## Publicação no GitHub Pages
-Envie `index.html`, `style.css`, `checkout.html`, `checkout.css` e `checkout.js` para a raiz do repositório. Ative GitHub Pages em **Settings > Pages > Deploy from a branch > main > / (root)**.
+## Publicação
+1. Extraia os arquivos da pasta para a **raiz** do seu repositório GitHub (de modo que `index.html` fique na raiz).
+2. Em Settings > Pages, escolha **Deploy from a branch**, branch `main`, pasta `/ (root)`.
+3. Abra o endereço fornecido pelo GitHub Pages e teste os planos, o botão de copiar a chave e o WhatsApp.
 
-## Personalização
-No começo de `checkout.js`, configure os dados de Pix e o número do WhatsApp. Atualize também a constante `WHATSAPP` no script do `index.html` para manter os contatos iguais. Os dados atuais foram preservados do projeto enviado.
+## Dados Pix
+Edite o objeto `CONFIG` no começo do arquivo `checkout.js` para alterar chave, recebedor, banco ou WhatsApp.
 
-## Pagamentos
-O botão copia uma **chave Pix**, não gera cobrança automática nem QR Code bancário. O comprador informa o valor no aplicativo bancário e envia o comprovante via WhatsApp. Confira o recebimento no extrato antes de liberar o serviço.
-
-O vídeo explicativo original foi mantido. Caso mostre a marca anterior, substitua o URL do iframe no `index.html`.
-
-## Paleta oficial PH TV DO FUTURO
-Azul principal `#1769E8`, branco `#FFFFFF`, fundo claro `#F4F8FF`, texto azul-escuro `#172C49` e borda `#D6E4F5`. Aplicada nas páginas inicial e de checkout.
+## Pagamentos e limites
+- A página disponibiliza **chave Pix aleatória copiável**.
+- O valor do plano é mostrado para referência: o comprador deve digitá-lo no banco e conferir o titular.
+- Pagamentos **não são confirmados automaticamente**. O comprovante enviado pelo WhatsApp deve ser verificado no extrato.
+- Não inclua senhas, segredos ou tokens em arquivos públicos.

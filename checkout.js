@@ -4,20 +4,19 @@
    Nunca coloque senhas, tokens ou dados bancários sigilosos.
    =========================================================== */
 const CONFIG = {
-  chavePix: '264e88d7-6826-4b33-a0cb-ae0003423a4a',
-  nomeRecebedor: 'GEAN MENDES SANTOS',
-  tipoChave: 'Chave aleatória', // Ex.: E-mail, CPF, CNPJ, Telefone ou Aleatória
-  instituicao: 'Banco Bradesco S.A.',
-  whatsapp: '5521965204419' // DDI + DDD + número, sem símbolos
+  chavePix: 'e3965777-b906-4c6a-8d9c-3f9f9113def7',
+  nomeRecebedor: 'Paulo Henrique Cachappuz Alvarenga',
+  tipoChave: 'Chave aleatória',
+  instituicao: 'Banco Itaú',
+  whatsapp: '5562999288729'
 };
 
-// Valores dos planos originais. Mantém a lista sob controle, sem aceitar
-// valores arbitrários da URL como se fossem preços validados.
 const PLANOS = [
-  { nome:'Plano Mensal', telas:'1 Tela', valor:25 },
-  { nome:'Plano Trimestral', telas:'1 Tela', valor:65 },
-  { nome:'Plano Semestral + 1 mês', telas:'1 Tela', valor:125 },
-  { nome:'Plano Anual + 2 meses', telas:'1 Tela', valor:250 }
+  { nome:'Mensal', telas:'1 Tela', valor:35 },
+  { nome:'Bimestral', telas:'1 Tela', valor:60 },
+  { nome:'Trimestral', telas:'1 Tela', valor:85 },
+  { nome:'Semestral', telas:'1 Tela', valor:170 },
+  { nome:'Anual', telas:'1 Tela', valor:300 }
 ];
 const moeda = valor => Number(valor).toLocaleString('pt-BR', {style:'currency',currency:'BRL'});
 const $ = id => document.getElementById(id);
@@ -47,7 +46,7 @@ if (plano) {
   $('orderHelp').textContent = 'Nenhum plano selecionado. Volte à página inicial para escolher um plano.';
 }
 const mensagem = plano
-  ? `Olá! Fiz o pagamento via Pix do ${plano.nome} (${plano.telas}), valor informado ${moeda(valorExibido)}. Segue o comprovante:`
+  ? `Olá! Fiz o pagamento via Pix do plano ${plano.nome} (${plano.telas}), valor informado ${moeda(valorExibido)}. Segue o comprovante:`
   : 'Olá! Fiz um pagamento via Pix e gostaria de enviar meu comprovante.';
 $('whatsappLink').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensagem)}`;
 
